@@ -1,0 +1,42 @@
+{
+  "name": "brb_draynori",
+  "version": "1.0.0",
+  "description": "Redo DrayNori",
+  "main": "app.js",
+  "scripts": {
+    "test": "\"NODE_ENV=test mocha -b\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-r-broge/brb_DrayNori.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "b-r-broge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b-r-broge/brb_DrayNori/issues"
+  },
+  "homepage": "https://github.com/b-r-broge/brb_DrayNori#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.2.1",
+    "mocha": "^4.0.1",
+    "mongoose": "^4.12.1",
+    "mustache-express": "^1.2.5",
+    "parseurl": "^1.3.2",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "supertest": "^3.0.0"
+  }
+}
