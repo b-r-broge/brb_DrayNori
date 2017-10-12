@@ -1,20 +1,17 @@
 //====LIST DEPENDENCIES===//
 const express = require('express');
-const parseurl = require('parseurl');
 const bodyParser = require('body-parser');
 const path = require('path');
 const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 const mustacheExpress = require('mustache-express');
 const session = require('express-session');
-// const cors = require('cors')
+const env = process.env.NODE_ENV || "dev";
+const config = require('./config/config.json')[env]
 const app = express();
 
-// TODO: Move mongoURL to config file that isn't pushed to git
-const url = 'mongodb://EthanJarrell:EJ3102nl1@ds147884.mlab.com:47884/draynori2';
+const url = config.mongoUrl;
 
-// add tests?
-// add local test db?
 //=========================//
 
 //====SET APP ENGINE===//
@@ -27,6 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+// TODO: figure out if Validator is actually being used, and remove if not
 app.use(expressValidator());
 
 //=========================//
@@ -34,8 +33,7 @@ app.use(expressValidator());
 //====START SESSION===//
 
 app.use(session({
-  // TODO: Change secret, move it to a config file that doesn't get pushed to git
-  secret: 'keyboard cat',
+  secret: config.secret,
   resave: false,
   saveUninitialized: true
 }));
@@ -55,117 +53,7 @@ mongoose.connect(url, function (err, db) {
 
 //==========================//
 
-//====TEST THE CONNECTION/ROOT DIR===//
 
-app.get('/', function(req, res) {
-  res.redirect('/home');
-});
-
-//==========================//
-
-//====RENDER HOME PAGE===//
-
-app.get('/home', function(req, res) {
-  res.render('home')
-});
-
-//==========================//
-
-//====RENDER START PAGE===//
-
-app.get('/start', function(req, res) {
-  User.find({username: req.session.username}).then(function(users) {
-  res.render('astart', {
-    users: users,
-   });
-});
-});
-
-//==========================//
-
-//====RENDER SIGNUP PAGE===//
-
-app.get('/signup', function(req, res) {
-  res.render('asignup')
-});
-
-//==========================//
-
-//====RENDER LOGIN PAGE===//
-
-app.get('/login', function(req, res) {
-  res.render('login')
-});
-
-//==========================//
-
-//====RENDER LOGIN PAGE2===//
-
-app.get('/login', function(req, res) {
-  if (req.session && req.session.authenticated) {
-    User.findOne({
-        username: req.session.username,
-        password: req.session.password
-      }).then(function(user) {
-      if (user) {
-        req.session.username = req.body.username;
-        var username = req.session.username;
-        var userid = req.session.userId;
-        res.render('login', {
-          user: user
-        });
-      }
-    })
-  } else {
-    res.redirect('/signup')
-  }
-})
-
-//==========================//
-
-//====POST LOGIN FOR USER===//
-// TODO: Implement passport
-// Iimplment passport to ensure that you can't access pages
-//    if you are not logged in.
-app.post('/login', function(req, res) {
-  let username = req.body.username;
-  let password = req.body.password;
-
-  User.findOne({
-      username: username,
-      password: password,
-  }).then(user => {
-    console.log(user);
-    if (user.password == password) {
-      req.session.username = username;
-      req.session.authenticated = true;
-      console.log(req.session);
-
-      res.redirect('/start');
-    } else {
-      res.redirect('/login');
-      console.log("This is my session", req.session)
-    }
-  })
-})
-
-//==========================//
-
-//====POST TO SIGNUP PAGE===//
-
-app.post('/signup', function(req, res) {
-  User.create({
-    username: req.body.username,
-    password: req.body.password,
-  }).then(function(user) {
-    req.username = user.username;
-    req.session.authenticated = true;
-}).then(user => {
-  res.redirect('/thanks')
-});
-});
-
-//==========================//
 
 //====CREATE Notation===//
 
