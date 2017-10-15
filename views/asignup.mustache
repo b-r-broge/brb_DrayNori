@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>the else if game</title>
+  <link rel="stylesheet" href="/home.css">
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Cherry+Cream+Soda|Fontdiner+Swanky|Frijole" rel="stylesheet">
+</head>
+
+<body>
+  <div class="bodywrapper">
+    <div class="signup-container">
+      <h2>Signup</h2>
+      <form id="signup-input" action="/signup" method="post">
+        <label for="sign-username">Username:</label>
+        <input id="sign-username" required type="text" name="username" placeholder="enter username">
+        <label for="sign-password">Password:</label>
+        <input id="sign-password" required type="password" name="password" placeholder="enter password">
+        <input class="signup_submit-button" type="submit">
+      </form>
+    </div>
+
+    {{signMessage}}
+    
+<h3>OR</h3>
+
+    <div class="login-container">
+      <h2>Log in</h2>
+      <form id="login-input" action="/login" method="post">
+        <label for="log-username">Username:</label>
+        <input id="log-username" required type="text" name="username" placeholder="enter username">
+        <label for="log-password">Password:</label>
+        <input id="log-password" required type="password" name="password" placeholder="enter password">
+        <input class="login_submit-button" type="submit">
+      </form>
+    </div>
+
+    {{logMessage}}
+
+    <h3>draynori</h3>
+    <h1>The JavaScript adventure game</h1>
+
+  </div>
+</body>
+
+</html>
