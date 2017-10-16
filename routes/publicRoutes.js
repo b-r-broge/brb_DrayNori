@@ -14,7 +14,9 @@ router.use(passport.session());
 
 //==================//
 
+//===PASSPORT CONFIG===//
 // Need to grab and return information from the session to validate the user.
+
 passport.serializeUser(function(user, next) {
   next(null, user.id);
 });
@@ -29,6 +31,10 @@ passport.deserializeUser(function(id, next) {
   });
 });
 
+//====================//
+
+
+//===PASSPORT STRATEGY===//
 
 // taken and slightly modified from -
 // https://github.com/jaredhanson/passport-http
@@ -60,6 +66,9 @@ passport.use('local-signin', new localStrategy (
   }
 ));
 
+//=======================//
+
+//===SIGNUP AND LOGIN POSTS===//
 
 router.post('/signup', function(req, res) {
   // Take an api request with username and password, add them to the DB if
@@ -84,21 +93,12 @@ router.post('/login',
   })
 );
 
+//============================//
 
 //====RENDER HOME PAGE===//
 
 router.get('/home', function(req, res) {
   res.render('home')
-});
-
-//==========================//
-
-//====RENDER START PAGE===//
-
-router.get('/start', function(req, res) {
-  res.render('astart', {
-    username: req.user.username
-  });
 });
 
 //==========================//
@@ -111,6 +111,16 @@ router.get('/signup', function(req, res) {
 
 //==========================//
 
+//==== LOGOUT ===//
+
+router.get('/logout', function(req, res) {
+  req.session.destroy(function(err) {})
+  res.redirect('/home');
+  console.log('session should be destroyed', req.session);
+});
+
+//==========================//
+
 //====TEST THE CONNECTION/ROOT DIR===//
 
 router.get('/', function(req, res) {
@@ -119,41 +129,13 @@ router.get('/', function(req, res) {
 
 //==========================//
 
-//====POST LOGIN FOR USER===//
-// TODO: Implement passport
-// Iimplment passport to ensure that you can't access pages
-//    if you are not logged in.
-router.post('/login', function(req, res) {
-  let username = req.body.username;
-  let password = req.body.password;
+//===AUTHENTICATED ROUTES===//
 
-  User.findOne({
-    username: username,
-    password: password,
-  }).then(user => {
-    console.log(user);
-    if (user.password == password) {
-      req.session.username = username;
-      req.session.authenticated = true;
-      console.log(req.session);
+const userRoutes = require('./userRoutes');
+const storyRoutes = require('./storyRoutes');
 
-      res.redirect('/start');
-    } else {
-      res.redirect('/login');
-      console.log("This is my session", req.session)
-    }
-  })
-})
-
-//==========================//
-
-//==== LOGOUT ===//
-
-router.post('/logout', function(req, res) {
-  req.session.destroy(function(err) {})
-  res.redirect('/home');
-  console.log(req.session);
-});
+router.use(storyRoutes);
+router.use(userRoutes);
 
 //==========================//
 

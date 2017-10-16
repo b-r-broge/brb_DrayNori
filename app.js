@@ -104,11 +104,6 @@ app.use(publicRoutes);
 //
 // //==========================//
 //
-// //====RENDER THANKS PAGE===//
-//
-// app.get('/thanks', function(req, res) {
-//   res.render('thanks')
-// });
 //
 // //==========================//
 //
