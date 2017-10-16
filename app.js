@@ -40,7 +40,6 @@ app.use(session({
 //==========================//
 
 //====MONGOOSE===//
-
 mongoose.Promise = require('bluebird');
 mongoose.connect(url, function (err, db) {
  if (err) {

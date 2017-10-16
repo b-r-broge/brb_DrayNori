@@ -103,6 +103,14 @@ router.get('/home', function(req, res) {
 
 //==========================//
 
+//====RENDER THANKS PAGE===//
+
+router.get('/thanks', function(req, res) {
+  res.render('thanks')
+});
+
+//==========================//
+
 //====RENDER SIGNUP PAGE===//
 
 router.get('/signup', function(req, res) {
