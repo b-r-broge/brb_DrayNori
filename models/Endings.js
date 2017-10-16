@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const Location = require('./Location');
 
-const ending = new Schema({
+const Ending = new Schema({
   text: {
     type: String,
     required: true,
@@ -16,6 +16,6 @@ const ending = new Schema({
 
 })
 
-const ending = mongoose.model('ending', userSchema, 'ending');
+const ending = mongoose.model('ending', Ending, 'ending');
 
-module.exports = User
+module.exports = ending

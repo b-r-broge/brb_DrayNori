@@ -12,6 +12,6 @@ const Gold = new Schema({
 
 })
 
-const Gold = mongoose.model('Gold', userSchema, 'poi');
+const gold = mongoose.model('Gold', Gold, 'gold');
 
-module.exports = User
+module.exports = gold

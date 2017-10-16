@@ -1,0 +1,565 @@
+* {
+  -webkit-transition: all .05s ease;
+  -moz-transition: all .05s ease;
+  -o-transition: all .05s ease;
+  transition: all .05s ease;
+  /*mix-blend-mode: multiply;*/
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-image: url('/background.png');
+  background-size: cover;
+}
+
+.question {
+  width: 45px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.question:hover {
+  bottom: 10px;
+  left: 10px;
+  transform: scale(1.15);
+}
+
+.mouseover {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-image: url("/popup.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+}
+
+.mouseover img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: 150px;
+  margin-left: -355px;
+}
+
+.mouseover2 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-image: url("/popup.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover2 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover2 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: 50px;
+  margin-left: -355px;
+  mix-blend-mode: normal;
+}
+
+.mouseover3 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-image: url("/popup.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover3 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover3 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: -100px;
+  margin-left: -375px;
+  mix-blend-mode: normal;
+}
+
+.mouseover4 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-image: url("/popup.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover4 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover4 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: 150px;
+  margin-left: -700px;
+  mix-blend-mode: normal;
+}
+
+.mouseover5 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-image: url("/popup.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover5 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover5 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  position: fixed;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: -60px;
+  margin-left: -700px;
+  mix-blend-mode: normal;
+}
+
+.mouseover7 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  background-image: url("/popup.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover7 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+.question:hover .mouseover7 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  position: fixed;
+  width: 500px;
+  height: 700px;
+  margin-top: -500px;
+  margin-left: 100px;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  mix-blend-mode: normal;
+}
+
+.infoContainer {
+  position: absolute;
+  z-index: 13;
+  width: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+}
+.infoHeader2 {
+  font-family: 'Frijole', cursive;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.infoHeader {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  z-index: 13;
+  font-size: 19px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.infoSubheader {
+  z-index: 14;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.submitbtn2 {
+  cursor: pointer;
+}
+
+.iftitle {
+  font-size: 25px;
+}
+
+.iftext {
+  font-size: 18px;
+}
+
+.inputfield {
+  visibility: hidden;
+}
+
+.submitbtn1 input {
+   mix-blend-mode: multiply;
+   background-color: none;
+   border: none;
+}
+
+.submitbtn1 {
+  /*opacity: 0;*/
+  z-index: 11;
+  /*border: black 2px solid;*/
+  position: absolute;
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  margin-left: 150px;
+  margin-top: -19px;
+  font-family: 'Fontdiner Swanky', cursive;
+  mix-blend-mode: multiply;
+}
+
+.submitbtn1:hover {
+  text-decoration: underline;
+  color: white;
+  transform: scale(1.15) rotate(6deg);
+  flex-grow: .5;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: multiply;
+}
+
+.yes {
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  margin-top: 25px;
+  margin-left: -65px;
+  font-family: 'Fontdiner Swanky', cursive;
+  mix-blend-mode: multiply;
+}
+
+.restartContainer {
+  position: absolute;
+  margin-top: -35vh;
+  margin-left: -5vw;
+}
+
+.goldfound {
+  cursor: pointer;
+  color: green;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  z-index: 10;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+}
+
+.submitbtn {
+  cursor: pointer;
+  opacity: 0;
+  z-index: 11;
+  border: black 2px solid;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  margin-left: 0px;
+  margin-top: 45px;
+}
+
+h3 {
+  z-index: 0;
+  margin-top: -40vh;
+  margin-left: -15vw;
+  position: absolute;
+  font-size: 38px;
+  font-family: 'Frijole', cursive;
+  transform: rotate(-4deg);
+}
+
+.m1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.maps {
+  text-decoration: none;
+  color: red;
+  position: fixed;
+  z-index: 11;
+  top: 25px;
+  right: 25px;
+  font-size: 22px;
+  font-family: 'Frijole', cursive;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: normal;
+}
+
+.maps:hover {
+  transform: scale(1.12);
+}
+
+.bodywrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+h2 {
+  font-family: 'Black Ops One', cursive;
+  position: absolute;
+  z-index: -1;
+  margin-left: -20vw;
+  width: 40vw;
+  font-size: 30px;
+  transform: rotate(3deg);
+}
+
+p {
+  font-size: 35px;
+  transform: rotate(8deg);
+  color: #606060;
+  font-family: 'Cherry Cream Soda', cursive;
+}
+
+h6 {
+  margin-top: -30px;
+  font-size: 17px;
+  transform: rotate(-4deg);
+  margin-left: 10px;
+  font-family: 'Fontdiner Swanky', cursive;
+}
+
+h5 {
+  font-size: 20px;
+  margin-top: -30px;
+  transform: rotate(3deg);
+}
+
+.linkContainer {
+  position: absolute;
+  z-index: 15;
+  height: 80vh;
+  z-index: 3;
+  position: absolute;
+  margin-left: 25vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 700px;
+}
+
+a {
+  z-index: 14;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: black;
+  display: flex;
+  flex-basis: 0.5;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 300px;
+  padding-left: 8px;
+  padding-right: 8px;
+  mix-blend-mode: multiply;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+  transform: scale(1.15) rotate(6deg);
+  flex-grow: .5;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: multiply;
+}
+
+.plink {
+  z-index: 13;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+textarea {
+  width: 40vw;
+  height: 30vh;
+}

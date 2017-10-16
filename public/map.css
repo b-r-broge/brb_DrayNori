@@ -1,0 +1,253 @@
+* {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  mix-blend-mode: multiply;
+  font-family: 'Frijole', cursive;
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-image: url('/map.png');
+  background-size: cover;
+}
+
+.question {
+  width: 45px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.question:hover {
+  bottom: 10px;
+  left: 10px;
+  transform: scale(1.15);
+}
+
+button {
+  cursor: pointer;
+  z-index: 12;
+  mix-blend-mode: normal;
+}
+
+.buttonx {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 25px;
+  mix-blend-mode: normal;
+}
+
+.buttonx:hover {
+  transform: scale(1.1);
+  filter: brightness(150%);
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: normal;
+}
+
+.buttonx img {
+  width: 50px;
+  margin-right: 10px;
+  mix-blend-mode: normal;
+}
+
+.bodywrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.headerDiv {
+  width: 100%;
+  padding-right: 80px;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column wrap;
+  align-items: flex-end;
+  position: fixed;
+  top: 10px;
+}
+
+.goldTitle {
+  font-size: 35px;
+}
+
+.goldTitle2 {
+  font-size: 25px;
+}
+
+.kuku {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 450px;
+  left: 700px;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+}
+
+img {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.kuku img {
+  width: 80px;
+}
+
+span {
+  font-size: 45px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.snag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 370px;
+  left: 300px;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+}
+
+.snag img {
+  width: 80px;
+}
+
+.mine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  left: 450px;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+}
+
+.mine img {
+  width: 80px;
+}
+
+.mount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+}
+
+.mount img {
+  width: 80px;
+}
+
+.croc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 600px;
+  left: 700px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.croc img {
+  width: 75px;
+}
+
+.spider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 650px;
+  left: 520px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.spider img {
+  width: 50px;
+}
+
+.cave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 300px;
+  left: 800px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.cave img {
+  width: 50px;
+}
+
+.bear {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.bear img {
+  width: 50px;
+}
+
+.ruin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 550px;
+  left: 600px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.ruin img {
+  width: 50px;
+}
+
+.piranha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 400px;
+  left: 400px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.piranha img {
+  width: 75px;
+}

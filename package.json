@@ -1,10 +1,11 @@
 {
   "name": "brb_draynori",
   "version": "1.0.0",
-  "description": "Redo DrayNori",
+  "description": "draynori learning experience",
   "main": "app.js",
   "scripts": {
-    "test": "\"NODE_ENV=test mocha -b\""
+    "test": "\"NODE_ENV=test mocha -b\"",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

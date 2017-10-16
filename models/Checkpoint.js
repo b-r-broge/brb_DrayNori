@@ -16,6 +16,6 @@ const Checkpoint = new Schema({
 
 })
 
-const Checkpoint = mongoose.model('Checkpoint', userSchema, 'checkpoint');
+const checkpoint = mongoose.model('Checkpoint', Checkpoint, 'checkpoint');
 
-module.exports = User
+module.exports = checkpoint

@@ -1,0 +1,182 @@
+* {
+  font-family: 'Fontdiner Swanky', cursive;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  mix-blend-mode: multiply;
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-image: url('/background.png');
+  background-size: cover;
+  overflow-y: visible;
+}
+
+button {
+  cursor: pointer;
+  z-index: 12;
+  mix-blend-mode: normal;
+}
+
+.buttonx {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 25px;
+  mix-blend-mode: normal;
+}
+
+.question {
+  width: 45px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.question:hover {
+  bottom: 10px;
+  left: 10px;
+  transform: scale(1.15);
+}
+
+.buttonx:hover {
+  transform: scale(1.1);
+  filter: brightness(150%);
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: normal;
+}
+
+.buttonx img {
+  width: 50px;
+  margin-right: 10px;
+  mix-blend-mode: normal;
+}
+
+.kukului {
+  width: 50vw;
+  position: absolute;
+  z-index: 1;
+  margin-left: -20vw;
+}
+
+.maps {
+  text-decoration: none;
+  color: red;
+  position: fixed;
+  z-index: 11;
+  top: 25px;
+  right: 25px;
+  font-size: 22px;
+  font-family: 'Frijole', cursive;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: normal;
+}
+
+.maps:hover {
+  transform: scale(1.12);
+}
+
+.bodywrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+h3 {
+  font-size: 35px;
+  transform: rotate(5deg);
+  font-family: 'Fontdiner Swanky', cursive;
+}
+
+h1 {
+  transform: rotate(-4deg);
+  font-size: 55px;
+}
+
+h2 {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 15px;
+  width: 35vw;
+  position: absolute;
+  margin-left: 30vw;
+}
+
+.inputfield {
+  visibility: hidden;
+}
+
+form {
+  z-index: 10;
+}
+
+.submitbutton {
+  cursor: pointer;
+  border: none;
+  font-family: 'Fontdiner Swanky', cursive;
+  z-index: 6;
+  margin-top: 30vh;
+  text-decoration: none;
+  font-size: 30px;
+  margin-left: -5vw;
+  margin-right: 2vw;
+}
+
+.submitbutton:hover {
+  text-decoration: underline;
+  color: white;
+  font-size: 40px;
+  transform: scale(1.2) rotate(6deg);
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+a {
+  z-index: 6;
+  margin-top: 38vh;
+  text-decoration: none;
+  font-size: 30px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+  font-size: 40px;
+  transform: scale(1.2) rotate(6deg);
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.ragsnag {
+  position: absolute;
+  margin-left: -15vw;
+  width: 600px;
+}
+
+.piranha {
+  width: 400px;
+  position: absolute;
+  margin-left: -300px;
+}

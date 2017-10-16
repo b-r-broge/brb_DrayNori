@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const Checkpoint = require('./Checkpoint');
 const Gold = require('./Gold');
@@ -38,17 +39,14 @@ const userSchema = new Schema({
   _checkpoint: {
     type: Schema.Types.ObjectId,
     ref: 'Checkpoint',
-    required: true
   },
   _gold: {
     type: Schema.Types.ObjectId,
     ref: 'Gold',
-    required: true
   },
   _PoI: {
     type: Schema.Types.ObjectId,
     ref: 'PoI',
-    required: true
   }
 })
 
@@ -63,6 +61,6 @@ userSchema.pre('save', function(next){
 })
 
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema, 'user');
 
 module.exports = User;

@@ -1,21 +1,23 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const Location = require('./Location');
 const Checkpoint = require('./Checkpoint');
 const Gold = require('./Gold');
 const PoI = require('./PoI');
 
-const nextPage = new mongoose.Schema({
+const nextPage = new Schema({
   optionText: {
     type: String,
     required: true
   },
-  nextPageNum: {
-    type: String
+  _nextPageNum: {
+    type: String,
+    ref: 'Page',
   }
 })
 
-const pageSchema = new mongoose.Schema({
+const Page = new Schema({
 
   pageNum: {
     type: String,
@@ -26,8 +28,7 @@ const pageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  options: [nextPage]
-  },
+  options: [nextPage],
   _location: {
     type: Schema.Types.ObjectId,
     ref: 'Location',
@@ -36,21 +37,18 @@ const pageSchema = new mongoose.Schema({
   _checkpoint: {
     type: Schema.Types.ObjectId,
     ref: 'Checkpoint',
-    required: true
   },
   _gold: {
     type: Schema.Types.ObjectId,
     ref: 'Gold',
-    required: true
   },
   _PoI: {
     type: Schema.Types.ObjectId,
     ref: 'PoI',
-    required: true
   }
 
 })
 
-const Page = mongoose.model('Page', pageSchema, 'Pages');
+const page = mongoose.model('Page', Page, 'page');
 
-module.exports = Page;
+module.exports = page;

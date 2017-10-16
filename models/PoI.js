@@ -12,6 +12,6 @@ const PoI = new Schema({
 
 })
 
-const PoI = mongoose.model('PoI', userSchema, 'poi');
+const poi = mongoose.model('PoI', PoI, 'poi');
 
-module.exports = User
+module.exports = poi
