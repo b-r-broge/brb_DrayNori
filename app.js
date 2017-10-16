@@ -7,10 +7,21 @@ const mongoose = require('mongoose');
 const mustacheExpress = require('mustache-express');
 const session = require('express-session');
 const env = process.env.NODE_ENV || "dev";
-const config = require('./config/config.json')[env]
+console.log(env);
+let url = "";
+let secret = "";
+if (env === "prod") {
+  url = process.env.MONGOLAB_URI;
+  secret = process.env.SECRET;
+} else {
+  url = require('./config/config.json')[env].MONGOLAB_URI
+  secret = require('./config/config.json')[env].SECRET
+}
 const app = express();
 
-const url = config.mongoUrl;
+
+console.log(url, secret);
+// const url = config.MONGOLAB_URI;
 
 //=========================//
 
@@ -33,7 +44,7 @@ app.use(expressValidator());
 //====START SESSION===//
 
 app.use(session({
-  secret: config.secret,
+  secret: secret,
   resave: false,
   saveUninitialized: true
 }));

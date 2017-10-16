@@ -43,7 +43,6 @@ passport.deserializeUser(function(id, next) {
 // Passport for signing in an existing user
 passport.use('local-signin', new localStrategy ({ },
   function(username, password, next) {
-    console.log('using sign in strategy');
     let isValid = (usrPass, pass) => {
       return bCrypt.compareSync(pass, usrPass);
     }
@@ -53,7 +52,7 @@ passport.use('local-signin', new localStrategy ({ },
         if (!data) {
           return next(null, false, {message: 'username does not exist'});
         }
-        console.log(data);
+        // console.log(data);
 
         if (!isValid(data.password, password)) {
           console.log('incorrect password');
