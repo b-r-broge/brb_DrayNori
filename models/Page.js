@@ -11,8 +11,9 @@ const nextPage = new Schema({
     type: String,
     required: true
   },
-  nextPageNum: {
-    type: String
+  _nextPageNum: {
+    type: String,
+    ref: 'Page',
   }
 })
 

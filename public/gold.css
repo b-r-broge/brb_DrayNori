@@ -1,0 +1,119 @@
+* {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  mix-blend-mode: multiply;
+  font-family: 'Frijole', cursive;
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 750px;
+  width: 1100px;
+  margin: 0;
+  background-image: url('/map.png');
+  background-size: cover;
+}
+
+.question {
+  width: 45px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.question:hover {
+  bottom: 10px;
+  left: 10px;
+  transform: scale(1.15);
+}
+
+button {
+  cursor: pointer;
+  z-index: 12;
+  mix-blend-mode: normal;
+}
+
+.buttonx {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 25px;
+}
+
+.buttonx:hover {
+  transform: scale(1.1);
+  filter: brightness(150%);
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.buttonx img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.bodywrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.headerDiv {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+}
+
+.goldTitle {
+  font-size: 35px;
+}
+
+.goldTitle2 {
+  font-size: 25px;
+}
+
+.goldContainer {
+  display: flex;
+  flex-flow: column wrap;
+  font-size: 35px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.goldItemContainer {
+  border-bottom: black dashed 2px;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 35px;
+  padding: 10px;
+}
+
+.goldlabel {
+  display: flex;
+  font-size: 25px;
+  padding-right: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.goldItem {
+  display: flex;
+  font-size: 35px;
+  padding-left: 25px;
+  border-left: black solid 2px;
+}

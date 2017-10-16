@@ -41,8 +41,9 @@ passport.deserializeUser(function(id, next) {
 // AND
 // https://www.npmjs.com/package/bcryptjs
 // Passport for signing in an existing user
-passport.use('local-signin', new localStrategy (
+passport.use('local-signin', new localStrategy ({ },
   function(username, password, next) {
+    console.log('using sign in strategy');
     let isValid = (usrPass, pass) => {
       return bCrypt.compareSync(pass, usrPass);
     }
@@ -52,9 +53,10 @@ passport.use('local-signin', new localStrategy (
         if (!data) {
           return next(null, false, {message: 'username does not exist'});
         }
-        // console.log(data);
+        console.log(data);
 
         if (!isValid(data.password, password)) {
+          console.log('incorrect password');
           return next(null, false, {message: 'password is not correct'});
         }
 
@@ -79,19 +81,18 @@ router.post('/signup', function(req, res) {
     "password": req.body.password,
   })
   newUser.save().then(function(user) {
-    res.redirect('thanks');
+    res.redirect('/thanks');
   }).catch(function(err) {
     console.log('ERROR', err);
     res.render('asignup', { signMessage: err });
   })
 })
 
-router.post('/login',
-  passport.authenticate('local-signin', {
-    failureRedirect: '/signup',
-    successRedirect: '/start'
-  })
-);
+router.post('/login', passport.authenticate('local-signin', {
+     failureRedirect: '/signup',
+     successRedirect: '/story/start'
+   })
+ );
 
 //============================//
 
@@ -106,6 +107,7 @@ router.get('/home', function(req, res) {
 //====RENDER SIGNUP PAGE===//
 
 router.get('/signup', function(req, res) {
+  // console.log('request user:', req.user);
   res.render('asignup')
 });
 
@@ -131,11 +133,11 @@ router.get('/', function(req, res) {
 
 //===AUTHENTICATED ROUTES===//
 
-const userRoutes = require('./userRoutes');
 const storyRoutes = require('./storyRoutes');
+const userRoutes = require('./userRoutes');
 
-router.use(storyRoutes);
-router.use(userRoutes);
+router.use('/story', storyRoutes);
+router.use('/user', userRoutes);
 
 //==========================//
 
