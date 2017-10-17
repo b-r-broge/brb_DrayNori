@@ -4,7 +4,7 @@
   "description": "draynori learning experience",
   "main": "app.js",
   "scripts": {
-    "test": "\"NODE_ENV=test mocha -b\"",
+    "test": "NODE_ENV=test mocha -b",
     "start": "node app.js"
   },
   "repository": {

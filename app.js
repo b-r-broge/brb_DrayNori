@@ -53,28 +53,17 @@ mongoose.connect(url, function (err, db) {
 
 //===IMPORT ROUTES HERE===//
 
-let publicRoutes = require('./routes/publicRoutes');
+const publicRoutes = require('./routes/publicRoutes');
+const addContent = require('./routes/addContent');
 
 //========================//
 
 //===CALL PUBLIC ROUTES HERE===//
 
 app.use(publicRoutes);
+app.use('/api', addContent);
 
 //=============================//
-//
-// //====CREATE Notation===//
-//
-// app.post('/ifelse', function(req, res) {
-//   Ifelse.create({
-//     number: req.body.number,
-//     text: req.body.text,
-//   }).then(ifelse => {
-//   res.json(ifelse)
-// });
-// });
-//
-// //==========================//
 //
 // //====CREATE NEW GOLD PAGE 5===//
 //
@@ -105,63 +94,13 @@ app.use(publicRoutes);
 //
 // //==========================//
 //
-// //====RENDER PAGE 0 PAGE===//
-// // game reset page
 //
-// app.get('/page0', function(req, res) {
-//   User.find({username: req.session.username}).then(function(users){
-//     Kuku.findOne({user: req.session.username}).then(function(kukus){
-//       Snag.findOne({user: req.session.username}).then(function(snags){
-//         Mount.findOne({user: req.session.username}).then(function(mounts){
-//           Mine.findOne({user: req.session.username}).then(function(mines){
-//             res.render('page0', {
-//               users: users,
-//               kukus: kukus,
-//               snags: snags,
-//               mounts: mounts,
-//               mines: mines,
-//             });
-//           });
-//         });
-//       });
-//     });
-//   });
-// });
-//
-// //==========================//
-//
-// //====RENDER PAGE 01 PAGE===//
-// // Intro page
-//
-// app.get('/page01', function(req, res) {
-//   User.find({username: req.session.username}).then(function(users){
-//     res.render('page01', {
-//       users: users,
-//     });
-//   });
-// });
-//
-// //==========================//
 //
 // //====RENDER ENDINGS===//
 // // TODO: figure out the different endings
 // app.get('/endings', function(req, res) {
 //   Ending.find({}).then(function (ending)  {
 //     res.json(ending);
-//   });
-// });
-//
-// //==========================//
-//
-// //====POST ENDINGS===//
-//
-// app.post('/endings', function(req, res) {
-//   Ending.create({
-//     beginning: req.body.beginning,
-//     text: req.body.text,
-//     end: req.body.end,
-//   }).then(endings => {
-//     res.json(endings)
 //   });
 // });
 //
@@ -183,25 +122,7 @@ app.use(publicRoutes);
 //
 // //==========================//
 //
-// //====POST PAGE===//
-// // TODO: Make it so it can post any page
-// app.post('/newPage/:pageNum', function(req, res) {
-//   Page1.create({
-//     text: req.body.text,
-//     option1: req.body.option1,
-//     option2: req.body.option2,
-//     option3: req.body.option3,
-//     option4: req.body.option4,
-//     option5: req.body.option5,
-//   }).then(page => {
-//     res.render('page1')
-//   });
-// });
 //
-// //==========================//
-//
-// // TODO: Add a put so that we can update pages as necessary
-
 
 //====APP LISTEN ON ENVIRONMENT PORT===//
 
