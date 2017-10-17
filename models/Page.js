@@ -11,15 +11,14 @@ const nextPage = new Schema({
     type: String,
     required: true
   },
-  _nextPageNum: {
+  _nextPage: {
     type: String,
-    ref: 'Page',
   }
 })
 
 const Page = new Schema({
 
-  pageNum: {
+  page: {
     type: String,
     required: true,
     unique: true

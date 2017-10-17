@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Draynori Code Exploration Game</title>
+    <link rel="stylesheet" href="/titlepage.css">
+    <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet">
+  </head>
+  <body>
+    <div class="bodywrapper">
+
+      <button class="buttonx" onclick="goBack()"><img src="/btn_x.png" />Go Back</button>
+
+        <script>
+        function goBack() {
+          window.history.back();
+        }
+        </script>
+
+    <img class="kukului" src="/kukului.png"></img>
+    <h2>We meet the protagonist of the adventure, an archaeologist named Dakota Jones, as he makes his way through the Kuku-Loui jungle.  It will be your job to guide him through this quest.  To do so, you'll need to use JavaScript.  On the first leg of this journey, you can control what Dakota does through if/else statements. It will look something like this:
+
+      <div><span class="bold">if (condition)</span>
+            <div><span class="bold">{code to execute}</span></div></div>
+
+        In JavaScript, an if statement begins with an "if", followed by a condition in parentheses.  If the condition is met, a block of code, wrapped in curley braces, which follows the condition, will be executed.  If the condition is not met, the initial statement will be followed by either an else if statement, or an else statment, with similar conditions and code blocks.
+
+        <div><span class="bold">else if (condition)</span>
+              <div><span class="bold">{code to execute}</span></div></div>
+
+          An else if statement basically says, ""if the condition in the first statement is not met, do this instead."  An else statment mean, "if none of the other conditions are met, then execute this code"
+
+          <div><span class="bold">else (condition)</span>
+                <div><span class="bold">{code to execute}</span></div></div>
+
+        </h2>
+
+        <form class="login_input" action="/kuku" method="post">
+
+          <input class="inputfield" type="text" value="Kuku-Loui Jungle" name="kuku" />
+
+          <input class="submitbutton" value="continue" type="submit" />
+
+        </form>
+
+  </div>
+  </body>
+</html>
