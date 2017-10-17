@@ -4,10 +4,11 @@ const Schema = mongoose.Schema
 const Gold = new Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   },
   value: {
     type: String,
+    required: true
   },
 
 })
