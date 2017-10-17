@@ -4,6 +4,10 @@ const Schema = mongoose.Schema
 const Location = require('./Location');
 
 const Ending = new Schema({
+  title: {
+    type: String,
+    required: true
+  },
   text: {
     type: String,
     required: true,

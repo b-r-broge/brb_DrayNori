@@ -61,10 +61,6 @@ router.post('/location', function (req, res) {
 //   "text": "<<main text of the page>>",
 //   "options": [{"option": "<<text of the option>>", "nextPage": "<<name of next page>>"}, ...],
 //   "location": "<<name of location this page is in>>",
-// //NON FIELDS //
-//   "checkpoint": "<<name of checkpoint>>",
-//   "gold": "<<name of gold>>",
-//   "poi": "<<name of point of interest>>"
 // }
 
 router.post('/page', function (req, res) {
@@ -84,13 +80,6 @@ router.post('/page', function (req, res) {
       _location: loc._id,
       options: pageOpt
     };
-    // if (req.body.checkpoint) {
-    //   page[_checkpoint] = req.body.checkpoint
-    // } if (req.body.gold) {
-    //   page[_gold] = req.body.gold
-    // } if (req.body.poi) {
-    //   page[_PoI] = req.body.poi
-    // }
     let newPage = new Page(page);
     newPage.save()
     .then(function(data) {
@@ -119,18 +108,88 @@ router.post('/page', function (req, res) {
 //=================//
 
 //===CREATE ENDINGDS===//
+// Expect content to come in JSON format,
+// {
+//   "title": "<<ending title>>",
+//   "text": "<<main text of the ending>>",
+//   "location": "<<name of location this ending is in>>",
+// }
+
+router.post('/ending', function (req, res) {
+  Location.findOne({name: req.body.location})
+  .then(function(loc) {
+    let ending = new Ending({
+      title: req.body.title,
+      text: req.body.text,
+      _location: loc._id
+    });
+    ending.save()
+    .then(function(data) {
+      return res.status(200).json({
+        "success": true,
+        "newPage": data.title
+      })
+    })
+    .catch(function(err) {
+      console.log('ERROR adding new ending', err);
+      res.json({
+        "success": false,
+        "error": err
+      })
+    })
+  })
+  .catch(function(err) {
+    console.log('ERROR finding location when adding new ending', err);
+    res.json({
+      "success": false,
+      "error": err
+    })
+  })
+})
 
 //=====================//
 
 //===CREATE CHECKPOINT===//
+// Expect content to come in JSON format,
+// {
+//   "name": "<<checkpoint name>>",
+//   "page": "<<name of page this checkpoint refers to>>",
+// }
+
+router.post('/checkpoint', function (req, res) {
+  Page.findOne({page: req.body.page})
+  .then(function (page) {
+
+  })
+  .catch(function(err) {
+    console.log('ERROR finding location when adding new ending', err);
+    res.json({
+      "success": false,
+      "error": err
+    })
+  })
+})
 
 //=======================//
 
 //===CREATE GOLD===//
+// Expect content to come in JSON format,
+// {
+//   "name": "<<gold name>>",
+//   "value": "<<value of gold in a string format>>"
+//   "page": "<<name of page this gold refers to>>",
+// }
 
 //=================//
 
 //===CREATE POI===//
+// Expect content to come in JSON format,
+// {
+//   "name": "<<interest name>>",
+//   "icon": "<<source string of the icon>>"
+//   "page": "<<name of page this poi refers to>>",
+// }
+
 
 //================//
 
