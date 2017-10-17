@@ -13,7 +13,6 @@ const nextPage = new Schema({
   },
   _nextPageNum: {
     type: String,
-    ref: 'Page',
   }
 })
 
