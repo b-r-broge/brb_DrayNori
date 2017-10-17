@@ -159,7 +159,34 @@ router.post('/ending', function (req, res) {
 router.post('/checkpoint', function (req, res) {
   Page.findOne({page: req.body.page})
   .then(function (page) {
-
+    let newCheckpoint = new Checkpoint({
+      name: req.body.name,
+      _page: page._id
+    })
+    newCheckpoint.save()
+    .then(function(data) {
+      Page.update({_id: page._id}, {_checkpoint: data._id})
+      .then(function(data) {
+        return res.json({
+          "success": true,
+          "checkpoint": data.name
+        })
+      })
+      .catch(function(err) {
+        console.log('ERROR adding checkpoint to page', err);
+        res.json({
+          "success": false,
+          "error": err
+        })
+      })
+    })
+    .catch(function(err) {
+      console.log('ERROR adding new checkpoint', err);
+      res.json({
+        "success": false,
+        "error": err
+      })
+    })
   })
   .catch(function(err) {
     console.log('ERROR finding location when adding new ending', err);
@@ -180,6 +207,37 @@ router.post('/checkpoint', function (req, res) {
 //   "page": "<<name of page this gold refers to>>",
 // }
 
+router.post('/gold', function (req, res) {
+  let newGold = new Gold({
+    name: req.body.name,
+    value: req.body.value
+  })
+  newGold.save()
+  .then(function(data) {
+    Page.update({name: req.body.page}, {_gold: data._id})
+    .then(function(data) {
+      return res.json({
+        "success": true,
+        "checkpoint": data.name
+      })
+    })
+    .catch(function(err) {
+      console.log('ERROR adding gold to page', err);
+      res.json({
+        "success": false,
+        "error": err
+      })
+    })
+  })
+  .catch(function(err) {
+    console.log('ERROR adding new gold', err);
+    res.json({
+      "success": false,
+      "error": err
+    })
+  })
+})
+
 //=================//
 
 //===CREATE POI===//
@@ -190,6 +248,36 @@ router.post('/checkpoint', function (req, res) {
 //   "page": "<<name of page this poi refers to>>",
 // }
 
+router.post('/gold', function (req, res) {
+  let newPoi = new PoI({
+    name: req.body.name,
+    iconSrc: req.body.icon
+  })
+  newPoi.save()
+  .then(function(data) {
+    Page.update({name: req.body.page}, {_PoI: data._id})
+    .then(function(data) {
+      return res.json({
+        "success": true,
+        "checkpoint": data.name
+      })
+    })
+    .catch(function(err) {
+      console.log('ERROR adding poi to page', err);
+      res.json({
+        "success": false,
+        "error": err
+      })
+    })
+  })
+  .catch(function(err) {
+    console.log('ERROR adding new poi', err);
+    res.json({
+      "success": false,
+      "error": err
+    })
+  })
+})
 
 //================//
 
