@@ -22,13 +22,12 @@ const Users = require('../models/User');
 // {
 //   "name": "<<location name>>",
 //   "background": "<<background source>>",
-//    "help": "<<popup help text>>",
-//    "popup": "<<notation popup help text>>",
-//    "notation": "<<name of notation"
+//   "help": "<<popup help text>>",
+//   "popup": "<<notation popup help text>>",
+//   "notation": "<<name of notation"
 // }
 
 router.post('/location', function (req, res) {
-  // TODO: take in JSON POST and add it to the DB
   let newLocation = new Location({
     name: req.body.name,
     backgroundSrc: req.body.background,
@@ -56,26 +55,65 @@ router.post('/location', function (req, res) {
 
 //===CREATE PAGE===//
 
-// //====POST PAGE===//
-// // TODO: Make it so it can post any page
-// app.post('/newPage/:pageNum', function(req, res) {
-//   Page1.create({
-//     text: req.body.text,
-//     option1: req.body.option1,
-//     option2: req.body.option2,
-//     option3: req.body.option3,
-//     option4: req.body.option4,
-//     option5: req.body.option5,
-//   }).then(page => {
-//     res.render('page1')
-//   });
-// });
-//
-// //==========================//
+// Expect content to come in JSON format,
+// {
+//   "name": "<<page name>>",
+//   "text": "<<main text of the page>>",
+//   "options": [{"option": "<<text of the option>>", "nextPage": "<<name of next page>>"}, ...],
+//   "location": "<<name of location this page is in>>",
+// //NON FIELDS //
+//   "checkpoint": "<<name of checkpoint>>",
+//   "gold": "<<name of gold>>",
+//   "poi": "<<name of point of interest>>"
+// }
 
 router.post('/page', function (req, res) {
-  // TODO: take in JSON via POST and add it to DB with an upsert
-  // add any next pages to make tracking page id's easier
+  Location.findOne({name: req.body.location})
+  .then(function(loc) {
+    let pageOpt = [];
+    for (opt of req.body.options) {
+      let newObj = {
+        optionText: opt.option,
+        _nextPage: opt.nextPage
+      }
+      pageOpt.push(newObj);
+    }
+    let page = {
+      page: req.body.name,
+      text: req.body.text,
+      _location: loc._id,
+      options: pageOpt
+    };
+    // if (req.body.checkpoint) {
+    //   page[_checkpoint] = req.body.checkpoint
+    // } if (req.body.gold) {
+    //   page[_gold] = req.body.gold
+    // } if (req.body.poi) {
+    //   page[_PoI] = req.body.poi
+    // }
+    let newPage = new Page(page);
+    newPage.save()
+    .then(function(data) {
+      return res.status(200).json({
+        "success": true,
+        "newPage": data.page
+      })
+    })
+    .catch(function(err) {
+      console.log('ERROR adding new page', err);
+      res.json({
+        "success": false,
+        "error": err
+      })
+    })
+  })
+  .catch(function(err) {
+    console.log('ERROR finding location when adding new page', err);
+    res.json({
+      "success": false,
+      "error": err
+    })
+  })
 })
 
 //=================//
